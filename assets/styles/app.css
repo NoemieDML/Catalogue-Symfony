@@ -125,3 +125,15 @@ a {
   padding: 12px;
   border: 1px solid #dddddd;
 }
+
+.box-shadow {
+  box-shadow: 30px 0px 40px rgb(184, 184, 184),
+    -30px 0px 40px rgb(193, 185, 185);
+  margin: auto;
+  max-width: 900px;
+}
+
+.box-shadow img {
+  width: 400px;
+  height: 350px;
+}

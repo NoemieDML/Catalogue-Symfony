@@ -1,21 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ShowController!{% endblock %}
+{% block title %}Voici le Produit souhaiter
+{% endblock %}
 
 {% block body %}
+<h1>Voici le Produit souhaiter</h1>
 
-<div class="card-container"></div>
-
-{% for menu in Menus %}
-<div class="card">
+<div class="box-shadow">
     <img src="{{ asset(menu.img) }}" alt="">
     <div class="card-content">
         <h1>{{ menu.name}}</h1>
         <br>
         <h2>{{ menu.price}}€</h2>
         <br>
-        <p>quantité restante :{{ menu.quantite}}</p>
+        <h5>Type : {{ menu.categories.name}}</h5>
+        <br>
+        <p>quantité restante : {{ menu.quantite}}</p>
     </div>
 </div>
-{% endfor %}
+
+
 {% endblock %}

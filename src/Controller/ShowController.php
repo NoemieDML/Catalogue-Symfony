@@ -12,9 +12,9 @@ final class ShowController extends AbstractController
     #[Route('menus_show/{id}', name: 'menus_show')]
     public function show(MenusRepository $MenusRepository, $id): Response
     {
-        $menus = $MenusRepository->find($id);
+        $menu = $MenusRepository->find($id);
         return $this->render('show/show.html.twig', [
-            'Show' => $menus,
+            'menu' => $menu,
         ]);
     }
 }
