@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menus MIAM MIAM{% endblock %}
+
+{% block body %}
+
+<div class="card-container">
+
+    {% for menu in Menus %}
+
+    <div class="card">
+        <img src="{{ asset(menu.img) }}" alt="">
+        <div class="card-content">
+            <h1>{{ menu.name}}</h1>
+            <br>
+            <h2>{{ menu.price}}€</h2>
+            <br>
+            <h5>Nom de la catégorie :{{ menu.categories.name}}</h5>
+            <br>
+            <p>quantité restante :{{ menu.quantite}}</p>
+            <a class="liens" href="{{ path('menus_show', {'id' : menu.id}) }}">lien vers mon article</a>
+
+        </div>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
