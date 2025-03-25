@@ -1,21 +1,24 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-admin.html.twig' %}
 
 {% block title %}Voici le Produit souhaiter
 {% endblock %}
 
 {% block body %}
 <h1>Voici le Produit souhaiter</h1>
+<br>
 
-<div class="box-shadow">
-    <img src="{{ asset(menu.img) }}" alt="">
-    <div class="card-content">
-        <h1>{{ menu.name}}</h1>
-        <br>
-        <h2>{{ menu.price}}€</h2>
-        <br>
-        <h5>Type : {{ menu.categories.name}}</h5>
-        <br>
-        <p>quantité restante : {{ menu.quantite}}</p>
+<div class="d-flex justify-content-center align-items-center">
+
+    <div class="card h-100">
+        <img src="{{ asset(menu.img) }}" class="card-img-top object-fit-cover" style="height: 8rem;" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ menu.name}}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{ menu.price}}€</li>
+            <li class="list-group-item">Nom de la catégorie :{{ menu.categories.name}}</li>
+            <li class="list-group-item">quantité restante :{{ menu.quantite}}</li>
+        </ul>
     </div>
 </div>
 

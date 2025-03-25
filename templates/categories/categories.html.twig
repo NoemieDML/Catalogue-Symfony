@@ -3,40 +3,31 @@
 {% block title %}Menus MIAM MIAM{% endblock %}
 
 {% block body %}
-<h1>Voici les Diffréntes catégories</h1>
+<h1>Voici les articles par catégories</h1>
 
-<a class="liens" href="{{ path('categories', {'id' : 1}) }}">
-    <h4>Sucré</h4>
-</a>
-<a class="liens" href="{{ path('categories', {'id' : 2}) }}">
-    <h4>Salé</h4>
-</a>
-<a class="liens" href="{{ path('menus_
-categories') }}">
-    <h4>Tout affiché</h4>
-</a>
+<div class="container-fluid">
 
-<div class="card-container">
+    <div class="row">
+        {% for menu in Menus %}
+        <div class="col-lg-3 col-md-4 mb-3">
 
-    {% for menu in Menus %}
-
-    <div class="card">
-        <img src="{{ asset(menu.img) }}" alt="">
-        <div class="card-content">
-            <h1>{{ menu.name}}</h1>
-            <br>
-            <h2>{{ menu.price}}€</h2>
-            <br>
-            <h5>Nom de la catégorie :{{ menu.categories.name}}</h5>
-            <br>
-            <p>quantité restante :{{ menu.quantite}}</p>
-            <a class="liens" href="{{ path('menus_show', {'id' : menu.id}) }}">lien vers mon article</a>
-
+            <div class="card h-100">
+                <img src="{{ asset(menu.img) }}" class="card-img-top object-fit-cover" style="height: 8rem;" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ menu.name}}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{ menu.price}}€</li>
+                    <li class="list-group-item">Nom de la catégorie :{{ menu.categories.name}}</li>
+                    <li class="list-group-item">quantité restante :{{ menu.quantite}}</li>
+                </ul>
+                <div class="card-body">
+                    <a href="{{ path('menus_show', {'id' : menu.id}) }}" class="card-link">lien vers mon article</a>
+                </div>
+            </div>
         </div>
+        {% endfor %}
     </div>
-
-    {% endfor %}
-
 </div>
 
 {% endblock %}

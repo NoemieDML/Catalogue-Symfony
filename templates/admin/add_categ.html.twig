@@ -1,0 +1,11 @@
+{% extends 'base-admin.html.twig' %}
+{% block body %}
+<h2>Les catégories</h2>
+{{ form_start(form) }}
+
+{{ form_row(form.name) }}
+
+<button type="submit">Soumettre</button>
+{{ form_end(form) }}
+
+{% endblock %}

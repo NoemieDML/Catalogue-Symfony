@@ -1,13 +1,35 @@
-<header>
-    <nav class="navbar">
-        <a href="#" class="logo">MIAM MIAM</a>
-        <div class="nav-links ">
-            <ul>
-                <li class="active"><a href="{{ path('home') }}">Home</a></li>
-                <li><a href="{{ path('menus') }}">Menus</a></li>
-                <li><a href="{{ path('menus_categories') }}">Categories</a></li>
-                <li><a href="{{ path('admin') }}">Admin</a></li>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" class="logo">MIAM MIAM</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ path('home') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('menus') }}">Menus</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="{{ path('menus_categories') }}" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Categories
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ path('categories', {'id' : 1}) }}">Sucré</a></li>
+                        <li><a class="dropdown-item" href="{{ path('categories', {'id' : 2}) }}">Salé</a></li>
+                        <li><a class="dropdown-item" href="{{ path('categories', {'id' : 13}) }}"> Entré</a></li>
+                        <li><a class="dropdown-item" href="{{ path('categories', {'id' : 14}) }}"> Plats</a></li>
+                        <li><a class="dropdown-item" href="{{ path('menus_categories') }}">Tout affiché</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('admin') }}">Admin</a>
+                </li>
             </ul>
         </div>
-    </nav>
-</header>
+    </div>
+</nav>
